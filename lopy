@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T;
+    long N[1000000], arr[100000],i,j,k;
+    cin>>T;
+    for(i=0;i<T;i++)
+    {
+        cin>>N[i];
+        for(j=0;j<N[i];j++)
+        {
+            cin>>arr[j];
+        }
+        int count=0;
+        sort(arr,arr+N[i]);
+        for(k=0;k<N[i];k++)
+        {
+            if(arr[0]!=arr[1])
+            count=arr[0];
+            if(k>1 && arr[k-1]!=arr[k] && arr[k]!=arr[k+1])
+            count=arr[k];
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
